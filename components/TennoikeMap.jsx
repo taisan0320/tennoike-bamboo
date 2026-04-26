@@ -6,7 +6,7 @@ const MAP_SPOTS = [
     desc: { ja: "全長約70mの青竹のトンネル", en: "70m bamboo tunnel", zh: "全长约70米的青竹隧道" },
     x: 28, y: 58,
     img: "images/spot-path.jpeg",
-    audio: { ja: "audio/path-ja.mp3", en: "audio/path-en.mp3", zh: "audio/path-zh.mp3" },
+    audio: { ja: "audio/path-ja.wav", en: "audio/path-en.wav", zh: "audio/path-zh.wav" },
   },
   {
     id: "door",
@@ -14,7 +14,7 @@ const MAP_SPOTS = [
     desc: { ja: "三色の扉が竹林に佇む撮影スポット", en: "Three colorful doors in the grove", zh: "竹林中的三色之门" },
     x: 50, y: 42,
     img: "images/spot-door.webp",
-    audio: { ja: "audio/door-ja.mp3", en: "audio/door-en.mp3", zh: "audio/door-zh.mp3" },
+    audio: { ja: "audio/door-ja.wav", en: "audio/door-en.wav", zh: "audio/door-zh.wav" },
   },
   {
     id: "wind",
@@ -22,7 +22,7 @@ const MAP_SPOTS = [
     desc: { ja: "竹に吊された風鈴の道", en: "Path of wind chimes", zh: "悬挂风铃的小道" },
     x: 64, y: 30,
     img: "images/spot-wind.jpg",
-    audio: { ja: "audio/wind-ja.mp3", en: "audio/wind-en.mp3", zh: "audio/wind-zh.mp3" },
+    audio: { ja: "audio/wind-ja.wav", en: "audio/wind-en.wav", zh: "audio/wind-zh.wav" },
   },
   {
     id: "pond",
@@ -30,7 +30,7 @@ const MAP_SPOTS = [
     desc: { ja: "水鏡に映る竹と空", en: "Bamboo and sky reflected in the pond", zh: "倒映在水中的竹与天" },
     x: 76, y: 56,
     img: "images/spot-pond.webp",
-    audio: { ja: "audio/pond-ja.mp3", en: "audio/pond-en.mp3", zh: "audio/pond-zh.mp3" },
+    audio: { ja: "audio/pond-ja.wav", en: "audio/pond-en.wav", zh: "audio/pond-zh.wav" },
   },
   {
     id: "shrine",
@@ -38,7 +38,7 @@ const MAP_SPOTS = [
     desc: { ja: "朱塗りの鳥居と地域の鎮守", en: "Vermillion torii gate", zh: "朱红色的鸟居" },
     x: 18, y: 76,
     img: "images/spot-shrine.jpg",
-    audio: { ja: "audio/shrine-ja.mp3", en: "audio/shrine-en.mp3", zh: "audio/shrine-zh.mp3" },
+    audio: { ja: "audio/shrine-ja.wav", en: "audio/shrine-en.wav", zh: "audio/shrine-zh.wav" },
   },
 ];
 
