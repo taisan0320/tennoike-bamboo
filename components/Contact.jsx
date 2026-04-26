@@ -3,6 +3,8 @@ const Contact = () => {
   const ref = React.useRef(null);
   const [inView, setInView] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [error, setError] = React.useState(null);
   const [form, setForm] = React.useState({
     name: '', email: '', phone: '', category: '', message: ''
   });
@@ -19,7 +21,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    fetch('https://formspree.io/f/xeevdwbl', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        お名前: form.name,
+        メールアドレス: form.email,
+        電話番号: form.phone,
+        ご用件: form.category,
+        メッセージ: form.message,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          setSubmitted(true);
+        } else {
+          setError('送信に失敗しました。時間をおいて再度お試しください。');
+        }
+      })
+      .catch(() => setError('通信エラーが発生しました。インターネット接続をご確認ください。'))
+      .finally(() => setSending(false));
   };
 
   const valid = form.name && form.email && form.category && form.message;
@@ -79,10 +102,13 @@ const Contact = () => {
             ></textarea>
           </div>
 
+          {error && (
+            <p style={{ color: 'var(--accent-vermillion)', fontSize: 13, textAlign: 'center', marginBottom: 16, letterSpacing: '0.05em' }}>{error}</p>
+          )}
           <div style={{ textAlign: 'center' }}>
-            <button type="submit" className="form-submit" disabled={!valid}>
-              送信する
-              <span style={{ fontSize: 16 }}>→</span>
+            <button type="submit" className="form-submit" disabled={!valid || sending}>
+              {sending ? '送信中…' : '送信する'}
+              {!sending && <span style={{ fontSize: 16 }}>→</span>}
             </button>
           </div>
         </form>
